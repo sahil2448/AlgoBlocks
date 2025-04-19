@@ -205,12 +205,12 @@ import PriceChart from '../components/PriceChart';
 
 export default function Backtesting({ onNavigate }) {
   return (
+    //...existing code...
     <div className="min-h-full bg-gray-50 p-6">
       <header className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Backtesting</h1>
         
       </header>
-
       <div className="bg-white p-6 rounded shadow max-w-4xl mx-auto">
         <p className="mb-4">Visual representation of Close Price and 3‑Period SMA:</p>
         <PriceChart />

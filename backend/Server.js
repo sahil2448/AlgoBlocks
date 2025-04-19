@@ -1,15 +1,25 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const axios = require("axios");
+const cors = require("cors");
+
 const mongoose = require("mongoose");
 
 const StockData = require("./models/StockData");
 
 dotenv.config();
 
+// how to use cores
+
 const app = express();
 app.use(express.json());
 
+const corsOptions = {
+  origin: "*",
+  methods: "GET, POST",
+};
+
+app.use(cors(corsOptions));
 mongoose
   .connect(process.env.MONGO_URL)
   .then(() => console.log("MongoDB connected"))
@@ -70,6 +80,11 @@ app.get("/apidata", async (req, res) => {
     console.error("Error fetching market data:", error.message);
     res.status(500).json({ error: "Internal server error" });
   }
+});
+
+app.get("/getApiData", async (req, res) => {
+  const apiData = await StockData.find({});
+  res.json(apiData);
 });
 
 const PORT = process.env.PORT || 5000;

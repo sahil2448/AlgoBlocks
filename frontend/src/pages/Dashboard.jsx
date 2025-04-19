@@ -382,8 +382,6 @@
 
 import React from "react";
 
-
-
 export default function Dashboard({ onNavigate }) {
   return (
     <div className="flex-1 overflow-auto  bg-gray-50">

@@ -88,16 +88,31 @@
 //   );
 // }
 
-
 // src/pages/PaperTrading.jsx
-import React from 'react';
-
+import React from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 export default function PaperTrading({ onNavigate }) {
+  const [apiData, setApiData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/getApiData")
+      .then((res) => {
+        setApiData(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
   return (
     <div className="min-h-full bg-gray-50 p-6">
+      {apiData.map((stock) => (
+        <h3>{stock.high}</h3>
+      ))}
       <header className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Paper Trading</h1>
-        
       </header>
       <div className="bg-white p-6 rounded shadow max-w-xl mx-auto">
         <p>Simulate live trading (placeholder UI).</p>
