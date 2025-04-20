@@ -1,106 +1,3 @@
-// components/Sidebar.jsx
-// export const Sidebar = () => {
-//     const dragStart = (event, nodeType) => {
-//       event.dataTransfer.setData('application/reactflow', nodeType);
-//       event.dataTransfer.effectAllowed = 'move';
-//     };
-  
-//     return (
-//       <div className="w-64 p-4 bg-gray-100 h-screen">
-//         <div
-//           className="p-2 mb-4 bg-white rounded shadow cursor-move"
-//           draggable
-//           onDragStart={(e) => dragStart(e, 'rsi')}
-//         >
-//           📈 RSI Block
-//         </div>
-//         <div
-//           className="p-2 mb-4 bg-white rounded shadow cursor-move"
-//           draggable
-//           onDragStart={(e) => dragStart(e, 'buyOrder')}
-//         >
-//           🛒 Buy Order
-//         </div>
-//       </div>
-//     );
-//   };
-  
-
-// frontend/src/components/Sidebar.jsx
-// import React from 'react';
-
-// export const Sidebar = () => {
-//   const dragStart = (event, nodeType) => {
-//     event.dataTransfer.setData('application/reactflow', nodeType);
-//     event.dataTransfer.effectAllowed = 'move';
-//   };
-
-//   return (
-//     <div className="w-64 p-4 bg-gray-100 h-screen">
-//       <h2 className="text-lg font-bold mb-4">Strategy Blocks</h2>
-//       <div
-//         className="p-2 mb-4 bg-white rounded shadow cursor-move"
-//         draggable
-//         onDragStart={(e) => dragStart(e, 'marketData')}
-//       >
-//         📊 Market Data
-//       </div>
-//       <div
-//         className="p-2 mb-4 bg-white rounded shadow cursor-move"
-//         draggable
-//         onDragStart={(e) => dragStart(e, 'rsi')}
-//       >
-//         📈 RSI Block
-//       </div>
-//       <div
-//         className="p-2 mb-4 bg-white rounded shadow cursor-move"
-//         draggable
-//         onDragStart={(e) => dragStart(e, 'buyOrder')}
-//       >
-//         🛒 Buy Order
-//       </div>
-//       {/* Additional blocks for other indicators, risk controls, etc. */}
-//     </div>
-//   );
-// };
-
-// src/components/Sidebar.jsx
-// import React from 'react';
-
-// export const Sidebar = () => {
-//   const dragStart = (event, nodeType) => {
-//     event.dataTransfer.setData('application/reactflow', nodeType);
-//     event.dataTransfer.effectAllowed = 'move';
-//   };
-
-//   return (
-//     <div className="w-60 p-4 bg-gray-200 border-r border-gray-300 space-y-4">
-//       <h2 className="text-md font-semibold">Strategy builder</h2>
-//       <div
-//         className="p-2 bg-white rounded shadow cursor-move"
-//         draggable
-//         onDragStart={(e) => dragStart(e, 'marketData')}
-//       >
-//         Market data
-//       </div>
-//       <div
-//         className="p-2 bg-white rounded shadow cursor-move"
-//         draggable
-//         onDragStart={(e) => dragStart(e, 'rsi')}
-//       >
-//         RSI block
-//       </div>
-//       <div
-//         className="p-2 bg-white rounded shadow cursor-move"
-//         draggable
-//         onDragStart={(e) => dragStart(e, 'buyOrder')}
-//       >
-//         buy block
-//       </div>
-//     </div>
-//   );
-// };
-
 
 
 // src/components/BlockSidebar.jsx
@@ -132,18 +29,19 @@ export const BlockSidebar = () => {
   };
 
   return (
-    <aside className="w-64 bg-gray-100 p-4 border-r border-gray-300 overflow-auto">
-      <h2 className="text-lg font-semibold mb-4">Strategy Blocks</h2>
+    <div className=" flex h-[calc(100vh-18rem)]">
+    <aside className="w-64 bg-gray-100 p-4 border-r border-gray-300 overflow-y-auto">
+      <h2 className="text-lg font-semibold mb-4  ">Strategy Blocks</h2>
       {blockList.map((block) => (
         <div
           key={block.type}
-          className="mb-2 p-2 bg-white rounded shadow cursor-move hover:bg-gray-50"
+          className="mb-2 p-2 bg-white rounded shadow cursor-move hover:bg-gray-50 "
           draggable
           onDragStart={(e) => onDragStart(e, block)}
         >
           {block.label}
         </div>
       ))}
-    </aside>
+    </aside></div>
   );
 };

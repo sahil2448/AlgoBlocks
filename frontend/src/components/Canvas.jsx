@@ -484,9 +484,23 @@ import BlockConfigModal from './BlockConfigModal';
 
 export const CanvasInner = ({ nodeTypes: builtInNodeTypes = {} }) => {
   // Now builtInNodeTypes is always an object
-  const nodeTypes = Object.fromEntries(
-    Object.keys(builtInNodeTypes).map((t) => [t, EditableBlockNode])
-  );
+  // const nodeTypes = Object.fromEntries(
+  //   Object.keys(builtInNodeTypes).map((t) => [t, EditableBlockNode])
+  // );
+
+  const nodeTypes = {
+    rsi: EditableBlockNode,
+    movingAverage: EditableBlockNode,
+    bollingerBands: EditableBlockNode,
+    stopLoss: EditableBlockNode,
+    takeProfit: EditableBlockNode,
+    buyOrder: EditableBlockNode,
+    sellOrder: EditableBlockNode,
+    stopOrder: EditableBlockNode,
+    customLogic: EditableBlockNode,
+    marketData: EditableBlockNode,
+  };
+  
 
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState([]);

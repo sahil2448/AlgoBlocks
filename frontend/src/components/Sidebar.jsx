@@ -49,19 +49,19 @@ import {
 const DashboardSidebar = ({ active, onChange }) => {
   const menu = [
     { label: "Dashboard", icon: <Home size={18} />, key: "dashboard" },
-    {
-      label: "New Strategy",
-      icon: <PlusSquare size={18} />,
-      key: "newStrategy",
-    },
+    // {
+    //   label: "New Strategy",
+    //   icon: <PlusSquare size={18} />,
+    //   key: "newStrategy",
+    // },
     { label: "Strategy", icon: <Activity size={18} />, key: "strategy" },
 
-    { label: "Backtesting", icon: <FileText size={18} />, key: "backtesting" },
-    {
-      label: "Papertrading",
-      icon: <DollarSign size={18} />,
-      key: "papertrading",
-    },
+    // { label: "Backtesting", icon: <FileText size={18} />, key: "backtesting" },
+    // {
+    //   label: "Papertrading",
+    //   icon: <DollarSign size={18} />,
+    //   key: "papertrading",
+    // },
     { label: "Learn", icon: <Book size={18} />, key: "learn" },
     { label: "About", icon: <Info size={18} />, key: "about" },
   ];
