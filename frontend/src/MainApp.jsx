@@ -1,5 +1,5 @@
 // src/MainApp.jsx
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { AuthContext } from "./auth/AuthContext";
 import Logo from "./components/Logo";
 import DashboardLayout from "./pages/DashboardLayout";

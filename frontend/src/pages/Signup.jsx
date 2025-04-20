@@ -23,8 +23,10 @@ const Signup = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-md">
-        <h2 className="text-3xl font-bold mb-6 text-center text-blue-600">Create your AlgoBlocks account</h2>
-        
+        <h2 className="text-3xl font-bold mb-6 text-center text-blue-600">
+          Create your AlgoBlocks account
+        </h2>
+
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block font-medium">Username</label>
@@ -71,7 +73,10 @@ const Signup = () => {
         </form>
 
         <p className="text-sm text-center mt-4">
-          Already have an account? <a href="/login" className="text-blue-600 hover:underline">Log in</a>
+          Already have an account?{" "}
+          <a href="/login" className="text-blue-600 hover:underline">
+            Log in
+          </a>
         </p>
       </div>
     </div>

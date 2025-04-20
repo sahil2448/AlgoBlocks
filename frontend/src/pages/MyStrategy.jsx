@@ -10,7 +10,6 @@ export default function MyStrategy({ onNavigate }) {
     { id: 5, name: "Bollinger Bands Strategy", lastBacktest: "-5%" },
     { id: 6, name: "Momentum Trading", lastBacktest: "+20%" },
     { id: 7, name: "Mean Reversion", lastBacktest: "+10%" },
-    
   ];
 
   return (
@@ -23,7 +22,7 @@ export default function MyStrategy({ onNavigate }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {strategies.map((s) => (
             <div key={s.id} className="bg-white rounded shadow p-4">
-              <h3 className="text-lg font-bold mb-2">{s.name}</h3>
+              <h3 className="text-lg font-bold mb-2 text-black">{s.name}</h3>
               <p className="text-sm text-gray-600 mb-4">
                 Last Backtest: {s.lastBacktest}
               </p>

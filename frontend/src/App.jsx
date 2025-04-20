@@ -245,6 +245,8 @@
 // }
 
 // src/App.jsx
+
+import "./App.css";
 import React from "react";
 import { AuthProvider } from "./auth/AuthContext";
 import MainApp from "./MainApp";

@@ -1,20 +1,20 @@
 // src/pages/StrategyBuilder.jsx
-import React, { useState } from 'react';
-import { BlockSidebar } from '../components/BlockSidebar';
-import { Canvas } from '../components/Canvas';
+import React, { useState } from "react";
+import { BlockSidebar } from "../components/BlockSidebar";
+import { Canvas } from "../components/Canvas";
 
 export default function StrategyBuilder({ nodeTypes, onNavigate }) {
-  const [strategyName, setStrategyName] = useState('');
+  const [strategyName, setStrategyName] = useState("");
 
   const handleSave = () => {
     alert(`Strategy "${strategyName}" saved!`);
-    onNavigate('dashboard');
+    onNavigate("dashboard");
   };
 
   return (
     <div className="flex flex-col h-[calc(100vh-14rem)] bg-gray-100">
       <header className="bg-white p-4 shadow flex justify-between items-center">
-        <h1 className="text-xl font-bold">Strategy Builder</h1>
+        <h1 className="text-xl font-bold text-black">Strategy Builder</h1>
         <div className="flex items-center space-x-2">
           <input
             type="text"
@@ -30,11 +30,14 @@ export default function StrategyBuilder({ nodeTypes, onNavigate }) {
           >
             Save
           </button>
-          
         </div>
       </header>
       <div className="flex flex-1">
-        < BlockSidebar />
+        {/* Open the modal using document.getElementById('ID').showModal() method */}
+
+        <BlockSidebar />
+
+
         <Canvas nodeTypes={nodeTypes} />
       </div>
     </div>

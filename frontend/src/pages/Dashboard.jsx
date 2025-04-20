@@ -25,13 +25,14 @@ export default function Dashboard() {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-2">
           {buttons.map(({ key, label, base }) => {
-            const isActive = activeSection === key ;
+            const isActive = activeSection === key;
             return (
               <buttons
                 key={key}
                 onClick={() => setActiveSection(key)}
                 className={`
                  py-3 rounded-xl shadow-md flex items-center justify-center transition-all duration-200
+                 text-black
                 ${
                   isActive
                     ? `bg-${base}-100` /* active darker shade */
